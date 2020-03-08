@@ -29,6 +29,18 @@ namespace OpenBlog
         private void ConfigureResources(DotvvmConfiguration config, string applicationPath)
         {
             // register custom resources and adjust paths to the built-in resources
+            config.Resources.Register("default", new StylesheetResource()
+            {
+                Location = new UrlResourceLocation("~/css/default.css")
+            });
+            config.Resources.Register("layout", new StylesheetResource()
+            {
+                Location = new UrlResourceLocation("~/css/layout.css")
+            });
+            config.Resources.Register("media-queries", new StylesheetResource()
+            {
+                Location = new UrlResourceLocation("~/css/media-queries")
+            });
         }
 
 		public void ConfigureServices(IDotvvmServiceCollection options)

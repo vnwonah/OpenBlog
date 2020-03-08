@@ -10,7 +10,55 @@
     <None Remove="dotvvm_serialized_config.json.tmp" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <None Include="wwwroot\css\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\css\font-awesome\less\bordered-pulled.less" />
+    <None Include="wwwroot\css\font-awesome\less\core.less" />
+    <None Include="wwwroot\css\font-awesome\less\fixed-width.less" />
+    <None Include="wwwroot\css\font-awesome\less\font-awesome.less" />
+    <None Include="wwwroot\css\font-awesome\less\icons.less" />
+    <None Include="wwwroot\css\font-awesome\less\larger.less" />
+    <None Include="wwwroot\css\font-awesome\less\list.less" />
+    <None Include="wwwroot\css\font-awesome\less\mixins.less" />
+    <None Include="wwwroot\css\font-awesome\less\path.less" />
+    <None Include="wwwroot\css\font-awesome\less\rotated-flipped.less" />
+    <None Include="wwwroot\css\font-awesome\less\spinning.less" />
+    <None Include="wwwroot\css\font-awesome\less\stacked.less" />
+    <None Include="wwwroot\css\font-awesome\less\variables.less" />
+    <None Include="wwwroot\css\font-awesome\scss\font-awesome.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_bordered-pulled.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_core.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_fixed-width.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_icons.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_larger.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_list.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_mixins.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_path.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_rotated-flipped.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_spinning.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_stacked.scss" />
+    <None Include="wwwroot\css\font-awesome\scss\_variables.scss" />
+    <None Include="wwwroot\css\fonts\merriweather\merriweather-black-webfont.svg" />
+    <None Include="wwwroot\css\fonts\merriweather\merriweather-bold-webfont.svg" />
+    <None Include="wwwroot\css\fonts\merriweather\merriweather-bolditalic-webfont.svg" />
+    <None Include="wwwroot\css\fonts\merriweather\merriweather-heavyitalic-webfont.svg" />
+    <None Include="wwwroot\css\fonts\merriweather\merriweather-italic-webfont.svg" />
+    <None Include="wwwroot\css\fonts\merriweather\merriweather-light-webfont.svg" />
+    <None Include="wwwroot\css\fonts\merriweather\merriweather-lightitalic-webfont.svg" />
+    <None Include="wwwroot\css\fonts\merriweather\merriweather-regular-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-Bold-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-BoldItalic-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-ExtraBold-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-ExtraBoldItalic-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-Italic-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-Light-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-LightItalic-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-Regular-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-Semibold-webfont.svg" />
+    <None Include="wwwroot\css\fonts\opensans\OpenSans-SemiboldItalic-webfont.svg" />
+    <None Include="wwwroot\js\jquery-1.10.2.min.js" />
+    <None Include="wwwroot\js\jquery-migrate-1.2.1.min.js" />
+    <None Include="wwwroot\js\main.js" />
+    <None Include="wwwroot\js\modernizr.js" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="DotVVM.AspNetCore" Version="2.4.0-preview01-final" />
