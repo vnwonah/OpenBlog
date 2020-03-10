@@ -1,0 +1,38 @@
+﻿@viewModel OpenBlog.ViewModels.DefaultViewModel, OpenBlog
+@masterPage Views/MasterPage.dotmaster
+<dot:Content ContentPlaceHolderID="MainContent">
+	<div ID="content-wrap">
+		<div class="row">
+			<div ID="main" class="eight columns">
+				<dot:Repeater DataSource="{value: Posts}">
+					<ItemTemplate>
+						<article class="entry">
+							<header class="entry-header">
+
+								<h2 class="entry-title">
+									<a href="single.html" title="">{{value: Title}}</a>
+								</h2>
+
+								<div class="entry-meta">
+									<ul>
+										<li>July 12, 2014</li>
+										<span class="meta-sep">&bull;</span>
+										<li><a href="#" title="" rel="category tag">Ghost</a></li>
+										<span class="meta-sep">&bull;</span>
+										<li>John Doe</li>
+									</ul>
+								</div>
+							</header>
+							<div class="entry-content">
+								<p>{{value: Body}}</p>
+							</div>
+						</article>
+					</ItemTemplate>
+				</dot:Repeater>
+			</div>
+			<cc:Sidebar />
+		</div>
+	</div>
+
+	
+</dot:Content>

@@ -41,6 +41,9 @@ namespace OpenBlog
             {
                 Location = new UrlResourceLocation("~/css/media-queries")
             });
+
+            //Register Controls
+            config.Markup.AddMarkupControl("cc", "Sidebar", "Controls/Sidebar.dotcontrol");
         }
 
 		public void ConfigureServices(IDotvvmServiceCollection options)

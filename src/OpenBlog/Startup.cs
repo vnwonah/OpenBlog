@@ -1,13 +1,9 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using DotVVM.Framework.Routing;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
-using Microsoft.Extensions.Logging;
-using DotVVM.Framework.Hosting;
-using DotVVM.Framework.Routing;
+using OpenBlog.Services;
 
 namespace OpenBlog
 {
@@ -22,6 +18,7 @@ namespace OpenBlog
             services.AddAuthorization();
             services.AddWebEncoders();
             services.AddDotVVM<DotvvmStartup>();
+            services.AddTransient<PostService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

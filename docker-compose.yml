@@ -1,0 +1,20 @@
+version: "3.3"
+
+serices:
+    postgres-db:
+        image: postgres:latest
+        container_name: postgres-db
+        # network_mode: host
+        ports:
+            - "5432:5432"
+        environment: 
+            POSTGRES_USER: openblog
+            POSTGRES_DB: OpenBlog
+            POSTGRES_PASSWORD: OpenBlog12345
+        volumes: 
+            - postgres_data:/var/lib/postgresql/data
+        deploy:
+            restart_policy:
+                condition: on-failures
+                delay: 10s
+        restart: always
