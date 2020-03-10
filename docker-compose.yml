@@ -1,10 +1,9 @@
 version: "3.3"
 
-serices:
-    postgres-db:
+services:
+    postgresdb:
         image: postgres:latest
-        container_name: postgres-db
-        # network_mode: host
+        container_name: postgresdb
         ports:
             - "5432:5432"
         environment: 
@@ -15,6 +14,32 @@ serices:
             - postgres_data:/var/lib/postgresql/data
         deploy:
             restart_policy:
-                condition: on-failures
+                condition: on-failure
                 delay: 10s
         restart: always
+        networks:
+            - openblog
+    openblog:
+        build:
+            context: ./src/OpenBlog
+            dockerfile: Dockerfile
+        container_name: openblog
+        restart: always
+        ports: 
+            - "5500:5500"
+            - "5402:5402"
+        deploy:
+            restart_policy:
+                condition: on-failure
+                delay: 10s
+        depends_on: 
+            - postgresdb
+        networks:
+            - openblog
+volumes:
+    mongodb_data: {}
+    postgres_data: {}
+
+networks: 
+    openblog:
+

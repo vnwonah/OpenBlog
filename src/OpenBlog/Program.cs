@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
 namespace OpenBlog
@@ -13,16 +14,27 @@ namespace OpenBlog
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            CreateWebHostBuilder(args).Build().Run();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
-                .ConfigureLogging((context, builder) =>
+        public static IHostBuilder CreateWebHostBuilder(string[] args)
+        {
+            var hostBuilder = Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webHostBuilder =>
+            {
+                webHostBuilder.UseStartup<Startup>();
+                webHostBuilder.ConfigureLogging((context, builder) =>
                 {
                     builder.AddConsole();
-                })
-                .Build();
+                });
+                if (Environment.GetEnvironmentVariable("DOTNET_RUNNING_IN_CONTAINER") == "true")
+                    webHostBuilder.UseUrls("https://*:5402", "http://*:5500");
+                else
+                    webHostBuilder.UseUrls("https://localhost:5402", "http://localhost:5500");
+                webHostBuilder.UseKestrel();
+            });
+
+            return hostBuilder;
+        }
     }
 }
